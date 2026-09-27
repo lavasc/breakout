@@ -35,11 +35,11 @@ typedef struct {
     brick_t bricks[BRICK_ROWS][BRICK_COLS];
     int score;
     int state;
-} Context;
+} context_t;
 
-static Context default_context = {};
+static context_t default_context = {};
 
-static void context_update(Context *ctx)
+static void context_update(context_t *ctx)
 {
     float dt = GetFrameTime();
     if (ctx->state == GAME_PLAYING) {
@@ -120,7 +120,7 @@ static void context_update(Context *ctx)
     }
 }
 
-static void context_draw(const Context *ctx)
+static void context_draw(const context_t *ctx)
 {
     BeginDrawing();
     ClearBackground(RAYWHITE);
@@ -163,7 +163,7 @@ static void context_draw(const Context *ctx)
 
 int main(void)
 {
-    Context context = {
+    context_t context = {
         .paddle = {
             .pos = {},
             .size = { 100.0f, 20.0f },
