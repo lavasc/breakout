@@ -120,7 +120,7 @@ static void context_update(Context *ctx)
     }
 }
 
-static void context_draw(Context *ctx)
+static void context_draw(const Context *ctx)
 {
     BeginDrawing();
     ClearBackground(RAYWHITE);
